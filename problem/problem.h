@@ -1,2 +1,3 @@
-void solve_0001();
+#pragma once
 
+void solve_0001();

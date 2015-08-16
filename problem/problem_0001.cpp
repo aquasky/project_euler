@@ -1,4 +1,5 @@
 #include "common.h"
+#include "utils.h"
 
 /*
  * Problem 1
@@ -8,13 +9,11 @@
  */
 
 void solve_0001() {
-	int sum = 0;
-	for (int i = 1; i < 1000; ++i) {
-		if (isMultiple(i, 3) || isMultiple(i, 5)) {
-			sum += i;
-		}
-	}
-	printf("Problem 1 Answer : %d\n", sum);	// 233168
+    int sum = 0;
+    for (int i = 1; i < 1000; ++i) {
+        if (isMultiple(i, 3) || isMultiple(i, 5)) {
+            sum += i;
+        }
+    }
+    printf("Problem 1 Answer : %d\n", sum); // 233168
 }
-
-
