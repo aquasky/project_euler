@@ -8,8 +8,13 @@
  */
 
 void solve_0001() {
-	printf("Solve 0001\n");
-	printf("%d,%d,%d\n", IsMultiple(-5, 2), IsMultiple(4, 2), IsMultiple(0, 2));
+	int sum = 0;
+	for (int i = 1; i < 1000; ++i) {
+		if (isMultiple(i, 3) || isMultiple(i, 5)) {
+			sum += i;
+		}
+	}
+	printf("Problem 1 Answer : %d\n", sum);	// 233168
 }
 
 
