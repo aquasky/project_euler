@@ -10,11 +10,11 @@ set(CMAKE_CXX_COMPILER clang++)
 add_definitions(-O2 -std=c++14 -Wall -Wextra -Winit-self -Wno-unused-parameter -Wfloat-equal)
 
 # サブディレクトリ設定
-add_subdirectory(problem)
+add_subdirectory(Problem)
 
 # 実行ファイル設定
-add_executable(euler main.cpp)
+add_executable(Euler Main.cpp)
 
 # リンク設定
-target_link_libraries(euler problem)
+target_link_libraries(Euler Problem)
 
