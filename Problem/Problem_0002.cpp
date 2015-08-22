@@ -34,6 +34,7 @@ void problem_0002() {
         }
     }
 
+    assert(sum == 4613732);
     printf("Problem 2 Answer[%ld], Time[%s[ns]]\n", sum,
            sw.GetElapsedTime().c_str());
 }

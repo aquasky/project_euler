@@ -15,6 +15,8 @@ void problem_0001() {
             sum += i;
         }
     }
+
+    assert(sum == 233168);
     printf("Problem 1 Answer[%d], Time[%s[ns]]\n", sum,
            sw.GetElapsedTime().c_str());
 }
