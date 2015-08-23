@@ -7,16 +7,22 @@
  *	同じようにして, 1000 未満の 3 か 5 の倍数になっている数字の合計を求めよ.
  */
 
-void problem_0001() {
-    StopWatch<std::chrono::nanoseconds> sw;
-    int sum = 0;
-    for (int i = 1; i < 1000; ++i) {
-        if (isMultiple(i, 3) || isMultiple(i, 5)) {
-            sum += i;
-        }
-    }
+namespace {
+constexpr int solve() {
+	int sum = 0;
+	for (int i = 0; i < 1000; ++i) {
+		if (((i % 3) == 0) || ((i % 5) == 0)) {
+			sum += i;
+		}
+	}
+	return sum;
+}
+};
 
-    assert(sum == 233168);
-    printf("Problem 1 Answer[%d], Time[%s[ns]]\n", sum,
-           sw.GetElapsedTime().c_str());
+void problem_0001() {
+	StopWatch<std::chrono::nanoseconds> sw;
+	constexpr int answer = solve();
+	assert(answer == 233168);
+	printf("Problem 1 Answer[%d], Time[%s[ns]]\n", answer,
+	       sw.GetElapsedTime().c_str());
 }

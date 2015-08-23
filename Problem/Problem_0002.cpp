@@ -10,31 +10,31 @@
 
 template <typename T>
 struct Fibonacci {
-    constexpr Fibonacci() : a(-1), b(1) {}
-    constexpr Fibonacci(T _a, T _b) : a(_a), b(_b) {}
-    T operator()() {
-        std::swap(a, b);
-        return b += a;
-    }
+	constexpr Fibonacci() : a(-1), b(1) {}
+	constexpr Fibonacci(T _a, T _b) : a(_a), b(_b) {}
+	T operator()() {
+		std::swap(a, b);
+		return b += a;
+	}
 
-    T a;
-    T b;
+	T a;
+	T b;
 };
 
 void problem_0002() {
-    StopWatch<std::chrono::nanoseconds> sw;
+	StopWatch<std::chrono::nanoseconds> sw;
 
-    std::array<long, 34> ary = {};
-    std::generate(ary.begin(), ary.end(), Fibonacci<long>());
+	std::array<long, 34> ary = {};
+	std::generate(ary.begin(), ary.end(), Fibonacci<long>());
 
-    long sum = 0;
-    for (int n : ary) {
-        if (isMultiple(n, 2)) {
-            sum += n;
-        }
-    }
+	long sum = 0;
+	for (int n : ary) {
+		if ((n % 2) == 0) {
+			sum += n;
+		}
+	}
 
-    assert(sum == 4613732);
-    printf("Problem 2 Answer[%ld], Time[%s[ns]]\n", sum,
-           sw.GetElapsedTime().c_str());
+	assert(sum == 4613732);
+	printf("Problem 2 Answer[%ld], Time[%s[ns]]\n", sum,
+	       sw.GetElapsedTime().c_str());
 }
